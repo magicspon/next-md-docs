@@ -1,0 +1,15 @@
+import React from 'react'
+{{#if cssModules}}
+import classNames from 'classnames'
+import styles from './{{ properCase name }}.module.css'
+{{/if}}
+
+function {{ properCase name }} () {
+	return (
+		<div{{#if cssModules}} className={classNames(styles.box, 'text-blue-500' )}{{/if}}>
+			Hello <span className="underline">{{ properCase name }}!</span>
+		</div>
+	)
+}
+
+export default {{ properCase name }}

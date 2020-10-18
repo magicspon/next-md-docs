@@ -1,0 +1,5 @@
+/* Mango module */
+
+.box {
+	@apply text-red-500;
+}

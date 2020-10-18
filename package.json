@@ -1,0 +1,97 @@
+{
+	"name": "next-starter",
+	"license": "MIT",
+	"version": "1.0.0",
+	"quokka": {
+		"babel": {
+			"env": "test",
+			"configFile": "./.babelrc.js",
+			"polyfill": false
+		},
+		"installPackageCommand": "yarn add {packageName}",
+		"env": {
+			"params": {
+				"env": "NODE_ENV=test"
+			}
+		}
+	},
+	"dependencies": {
+		"classnames": "^2.2.6",
+		"gray-matter": "^4.0.2",
+		"next": "9.5.5",
+		"prop-types": "^15.7.2",
+		"ramda": "^0.27.1",
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0",
+		"react-syntax-highlighter": "^15.2.1",
+		"remark": "^13.0.0",
+		"remark-html": "^13.0.1"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.12.3",
+		"@storybook/addon-actions": "^6.0.26",
+		"@storybook/addon-essentials": "^6.0.26",
+		"@storybook/addon-links": "^6.0.26",
+		"@storybook/react": "^6.0.26",
+		"babel-eslint": "^10.1.0",
+		"babel-loader": "^8.1.0",
+		"css-loader": "^5.0.0",
+		"cssnano": "^4.1.10",
+		"dotenv": "^8.2.0",
+		"eslint": "^7.11.0",
+		"eslint-config-prettier": "^6.13.0",
+		"eslint-plugin-compat": "^3.5.1",
+		"eslint-plugin-jest": "^24.1.0",
+		"eslint-plugin-react": "^7.21.4",
+		"eslint-plugin-react-hooks": "^4.1.2",
+		"glob": "^7.1.6",
+		"husky": "^4.3.0",
+		"identity-obj-proxy": "^3.0.0",
+		"jest": "^26.5.3",
+		"lint-staged": "^10.4.2",
+		"postcss-flexbugs-fixes": "4.2.1",
+		"postcss-loader": "^4.0.4",
+		"postcss-preset-env": "^6.7.0",
+		"react-is": "^16.13.1",
+		"remark-extract-frontmatter": "^2.0.3",
+		"remark-frontmatter": "^3.0.0",
+		"remark-parse": "^9.0.0",
+		"remark-stringify": "^9.0.0",
+		"style-loader": "^2.0.0",
+		"stylelint": "^13.7.2",
+		"stylelint-config-standard": "^20.0.0",
+		"svg-react-loader": "^0.4.6",
+		"tailwindcss": "^1.9.4",
+		"unified": "^9.2.0"
+	},
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"storybook": "start-storybook -p 9999",
+		"build:storybook": "cross-env STORYBOOK_ENV=storybook build-storybook -s ./public",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"coverage": "jest --coverage",
+		"lint": "eslint --ignore-path .gitignore --ext .js .",
+		"prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
+		"format": "npm run prettier -- --write",
+		"check-format": "npm run prettier -- --list-different",
+		"validate": "npm run check-format && npm run lint && npm run build",
+		"generate-component": "npx plop",
+		"build-storybook": "build-storybook"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.+(js)": [
+			"eslint"
+		],
+		"**/*.+(js|css)": [
+			"prettier --write"
+		]
+	}
+}
